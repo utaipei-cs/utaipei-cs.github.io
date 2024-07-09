@@ -9,8 +9,8 @@ const HomePage = () => (
   <>
     <AllProviders>
       <Intro />
-      <Projects />
       <Skills />
+      <Projects />
       <Contact />
       <Footer />
     </AllProviders>
