@@ -14,7 +14,7 @@ const Intro = () => (
           </span>
         </h1>
         <h2 className="mb-[2.5rem] text-2xl md:text-4xl text-brand-secondary dark:text-slate-200 typography">
-					我們是由臺北市立大學資訊科學系學生組成的團隊，專注於為校園和各科系開發電腦專案。
+					我們是由臺北市立大學的學生組成的團隊，專注於為校園和各科系開發電腦專案。
         </h2>
       </div>
       <div className="flex-1 w-full md:w-1/2">
