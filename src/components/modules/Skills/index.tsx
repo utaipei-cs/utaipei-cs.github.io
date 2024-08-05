@@ -14,7 +14,7 @@ const Skills = () => {
           />
         </div>
         <div className="flex-none lg:flex-1 pl-0 lg:pl-8">
-          <h2 className="mb-8 text-3xl font-bold text-brand-primary dark:text-white typography">More about me</h2>
+          <h2 className="mb-8 text-3xl font-bold text-brand-primary dark:text-white typography">業務範圍</h2>
           {/* <div className="mb-[2.5rem] font-normal text-xl md:text-[26px] text-brand-secondary dark:text-slate-200 leading-[34px] typography"> */}
           <BusinessScope />
           {/* </div> */}
