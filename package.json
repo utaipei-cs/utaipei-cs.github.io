@@ -15,6 +15,7 @@
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
     "clsx": "^2.0.0",
     "formik": "^2.4.4",
+    "markdown-to-jsx": "^7.4.7",
     "next": "15.0.0-rc.0",
     "next-themes": "^0.2.1",
     "react": "19.0.0-rc-4c2e457c7c-20240522",

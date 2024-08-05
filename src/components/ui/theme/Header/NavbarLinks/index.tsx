@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import ToggleTheme from 'components/ui/theme/Header/ToggleTheme';
 
@@ -12,7 +11,6 @@ type NavbarLinksProps = {
 
 const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
   const [hasMounted, setHasMounted] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     setHasMounted(true);
@@ -26,25 +24,32 @@ const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
       })}
     >
       <Link
-        href={`${pathname}#about`}
+        href={`/#about`}
         className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
         scroll
       >
         業務範圍
       </Link>
       <Link
-        href={`${pathname}#projects`}
+        href={`/#projects`}
         className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
         scroll
       >
         參與專案
       </Link>
       <Link
-        href={`${pathname}#contact`}
+        href={`/#contact`}
         className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
         scroll
       >
         聯絡我們
+      </Link>
+			<Link
+        href={`/join-us`}
+        className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
+        scroll
+      >
+        加入我們
       </Link>
       {hasMounted && <ToggleTheme />}
     </div>
