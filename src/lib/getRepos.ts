@@ -4,28 +4,29 @@ import { unstable_noStore as noStore } from 'next/cache';
 
 const getRepos = async (): Promise<RepositoryEdge[]> => {
   noStore();
+  const ORG_NAME = 'utaipei-cs';
   const res = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     body: JSON.stringify({
       query: `
-				query viewer {
-					viewer {
-						repositories(first: 8, orderBy: {field: STARGAZERS, direction: DESC}) {
-							edges {
-								node {
-									id
-									name
-									url
-									description
-									stargazers {
-										totalCount
-									}
-									forkCount
-									languages(first: 3) {
-										nodes {
-											id
-											name
+				query organization {
+						organization(login: "${ORG_NAME}"){
+							repositories(first: 30, orderBy: {field: STARGAZERS, direction: DESC}) {
+								edges {
+									node {
+										id
+										name
+										url
+										description
+										stargazers {
+											totalCount
 										}
+										forkCount
+										languages(first: 3) {
+											nodes {
+												id
+												name
+											}
 									}
 								}
 							}
@@ -45,7 +46,7 @@ const getRepos = async (): Promise<RepositoryEdge[]> => {
 
   const data = await res.json();
 
-  return data.data.viewer.repositories.edges;
+  return data.data.organization.repositories.edges;
 };
 
 export default getRepos;
