@@ -10,23 +10,23 @@ const getRepos = async (): Promise<RepositoryEdge[]> => {
     body: JSON.stringify({
       query: `
 				query organization {
-						organization(login: "${ORG_NAME}"){
-							repositories(first: 30, orderBy: {field: STARGAZERS, direction: DESC}) {
-								edges {
-									node {
-										id
-										name
-										url
-										description
-										stargazers {
-											totalCount
+					organization(login: "${ORG_NAME}"){
+						repositories(first: 30, orderBy: {field: STARGAZERS, direction: DESC}) {
+							edges {
+								node {
+									id
+									name
+									url
+									description
+									stargazers {
+										totalCount
+									}
+									forkCount
+									languages(first: 3) {
+										nodes {
+											id
+											name
 										}
-										forkCount
-										languages(first: 3) {
-											nodes {
-												id
-												name
-											}
 									}
 								}
 							}
