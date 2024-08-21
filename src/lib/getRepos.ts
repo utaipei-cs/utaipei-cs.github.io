@@ -1,44 +1,9 @@
-import 'server-only';
 import { RepositoryEdge } from 'generated/graphql';
 import { unstable_noStore as noStore } from 'next/cache';
 
 const getRepos = async (): Promise<RepositoryEdge[]> => {
   noStore();
-  const ORG_NAME = 'utaipei-cs';
-  const res = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    body: JSON.stringify({
-      query: `
-				query organization {
-					organization(login: "${ORG_NAME}"){
-						repositories(first: 30, orderBy: {field: STARGAZERS, direction: DESC}) {
-							edges {
-								node {
-									id
-									name
-									url
-									description
-									stargazers {
-										totalCount
-									}
-									forkCount
-									languages(first: 3) {
-										nodes {
-											id
-											name
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			`,
-    }),
-    headers: {
-      Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-    },
-  });
+  const res = await fetch('https://api.github.com/orgs/utaipei-cs/repos');
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');
@@ -46,7 +11,17 @@ const getRepos = async (): Promise<RepositoryEdge[]> => {
 
   const data = await res.json();
 
-  return data.data.organization.repositories.edges;
+  return data.map((repo: any) => ({
+    node: {
+      id: repo.id,
+      name: repo.name,
+      url: repo.html_url,
+      description: repo.description,
+      stargazers: { totalCount: repo.stargazers_count },
+      forkCount: repo.forks_count,
+      languages: [], // TODO Cannot fetch languages, leave empty
+    },
+  }));
 };
 
 export default getRepos;
