@@ -35,7 +35,7 @@ const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
         className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
         scroll
       >
-        所有專案
+        專案列表
       </Link>
       <Link
         href={`/#contact`}
@@ -51,7 +51,8 @@ const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
       >
         加入我們
       </Link>
-      {hasMounted && <ToggleTheme />}
+			{/* TODO disable dark theme */}
+      {/* {hasMounted && <ToggleTheme />} */}
     </div>
   );
 };

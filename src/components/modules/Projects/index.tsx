@@ -8,7 +8,8 @@ import { RepositoryEdge } from 'generated/graphql';
 
 const Projects = () => (
   <div className="container py-8" id="projects">
-    <h2 className="text-2xl font-bold mb-6">所有專案</h2>
+    <h2 className="text-2xl font-bold">專案列表</h2>
+		<h2 className="text-sm text-gray-500 mb-6">* 非公開專案不會在此顯示</h2>
     <Repos />
   </div>
 );

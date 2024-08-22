@@ -8,7 +8,7 @@ type AllProvidersProps = {
 };
 
 const AllProviders = ({ children }: AllProvidersProps) => (
-  <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+  <ThemeProvider attribute="class" defaultTheme="light">
     {children}
   </ThemeProvider>
 );

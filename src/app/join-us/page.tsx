@@ -24,7 +24,7 @@ const CustomUl: React.FC<CustomProps> = (props) => <ul className="list-disc list
 
 const CustomLi: React.FC<CustomProps> = (props) => <li className="mb-2 text-brand-primary dark:text-white">{props.children}</li>;
 
-const CustomParagraph: React.FC<CustomProps> = (props) => <p className="mb-4 text-lg leading-relaxed text-brand-secondary dark:text-slate-200">{props.children}</p>;
+const CustomParagraph: React.FC<CustomProps> = (props) => <p className="mb-4 text-lg leading-relaxed text-brand-primary dark:text-slate-200">{props.children}</p>;
 
 const markdownText = `
 ## 加入好處
@@ -67,22 +67,24 @@ const MarkdownContent = () => {
       <AllProviders>
         <div className="bg-[url('/assets/illustrations/overlay.svg')] bg-[length:40%] bg-right-top bg-no-repeat pb-16">
           <Header />
-					<div className="bg-white dark:bg-zinc-900 shadow-md rounded-sm p-6 max-w-4xl mx-auto mt-8 prose prose-lg">
-						<Markdown
-							options={{
-								overrides: {
-									h1: { component: CustomH1 },
-									h2: { component: CustomH2 },
-									h3: { component: CustomH3 },
-									h4: { component: CustomH4 },
-									ul: { component: CustomUl },
-									li: { component: CustomLi },
-									p: { component: CustomParagraph },
-								},
-							}}
-						>
-							{markdownText}
-						</Markdown>
+					<div className="px-4">
+						<div className="bg-white dark:bg-zinc-900 shadow-md rounded-lg p-6 max-w-4xl mt-10 mx-auto">
+							<Markdown
+								options={{
+									overrides: {
+										h1: { component: CustomH1 },
+										h2: { component: CustomH2 },
+										h3: { component: CustomH3 },
+										h4: { component: CustomH4 },
+										ul: { component: CustomUl },
+										li: { component: CustomLi },
+										p: { component: CustomParagraph },
+									},
+								}}
+							>
+								{markdownText}
+							</Markdown>
+						</div>
 					</div>
         </div>
 				<Footer />
