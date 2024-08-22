@@ -1,4 +1,4 @@
-// components/MarkdownContent.js
+'use client'
 
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
@@ -7,20 +7,24 @@ import AllProviders from 'components/AllProviders';
 import Header from 'components/ui/theme/Header';
 import Footer from 'components/ui/theme/Footer';
 
+interface CustomProps {
+  children: React.ReactNode;
+}
+
 // Define custom components for specific HTML elements
-const CustomH1 = (props) => <h1 className="text-4xl font-bold mb-6 text-brand-primary dark:text-white">{props.children}</h1>;
+const CustomH1: React.FC<CustomProps> = (props) => <h1 className="text-4xl font-bold mb-6 text-brand-primary dark:text-white">{props.children}</h1>;
 
-const CustomH2 = (props) => <h2 className="text-3xl font-semibold mb-5 text-brand-primary dark:text-white">{props.children}</h2>;
+const CustomH2: React.FC<CustomProps> = (props) => <h2 className="text-3xl font-semibold mb-5 text-brand-primary dark:text-white">{props.children}</h2>;
 
-const CustomH3 = (props) => <h3 className="text-2xl font-semibold mb-4 text-brand-primary dark:text-white">{props.children}</h3>;
+const CustomH3: React.FC<CustomProps> = (props) => <h3 className="text-2xl font-semibold mb-4 text-brand-primary dark:text-white">{props.children}</h3>;
 
-const CustomH4 = (props) => <h4 className="text-xl font-semibold mb-4 text-brand-primary dark:text-white">{props.children}</h4>;
+const CustomH4: React.FC<CustomProps> = (props) => <h4 className="text-xl font-semibold mb-4 text-brand-primary dark:text-white">{props.children}</h4>;
 
-const CustomUl = (props) => <ul className="list-disc list-inside ml-6 mb-4 text-brand-primary dark:text-white">{props.children}</ul>;
+const CustomUl: React.FC<CustomProps> = (props) => <ul className="list-disc list-inside ml-6 mb-4 text-brand-primary dark:text-white">{props.children}</ul>;
 
-const CustomLi = (props) => <li className="mb-2 text-brand-primary dark:text-white">{props.children}</li>;
+const CustomLi: React.FC<CustomProps> = (props) => <li className="mb-2 text-brand-primary dark:text-white">{props.children}</li>;
 
-const CustomParagraph = (props) => <p className="mb-4 text-lg leading-relaxed text-brand-secondary dark:text-slate-200">{props.children}</p>;
+const CustomParagraph: React.FC<CustomProps> = (props) => <p className="mb-4 text-lg leading-relaxed text-brand-secondary dark:text-slate-200">{props.children}</p>;
 
 const markdownText = `
 ## 加入好處

@@ -4,11 +4,7 @@
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  swcMinify: true,
-  experimental: {
-    reactCompiler: true,
-    ppr: true,
-  },
+	output: 'export',
 };
 
 module.exports = nextConfig;
