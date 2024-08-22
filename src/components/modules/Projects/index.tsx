@@ -8,7 +8,7 @@ import { RepositoryEdge } from 'generated/graphql';
 
 const Projects = () => (
   <div className="container py-8" id="projects">
-    <h2 className="text-2xl font-bold mb-6">Projects</h2>
+    <h2 className="text-2xl font-bold mb-6">所有專案</h2>
     <Repos />
   </div>
 );

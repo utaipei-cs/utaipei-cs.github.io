@@ -35,7 +35,7 @@ const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
         className="text-black mb-4 lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white"
         scroll
       >
-        參與專案
+        所有專案
       </Link>
       <Link
         href={`/#contact`}

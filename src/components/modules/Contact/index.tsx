@@ -7,7 +7,7 @@ const Contact = () => (
 				<h2 className="text-3xl font-bold text-center mb-6 text-brand-primary dark:text-white">聯絡我們</h2>
 				<div className="text-gray-700 mb-4">
 					<span className="text-2xl font-semibold text-brand-primary dark:text-white">Email :</span>
-					<span className="text-xl ml-2 text-brand-primary dark:text-white">cs.sacsd@gmail.com</span>
+					<span className="text-xl ml-2 text-brand-primary dark:text-white">utcssa@go.utaipei.edu.tw</span>
 				</div>
 				<div className="text-gray-700">
 					<span className="text-2xl font-semibold text-brand-primary dark:text-white">Instagram :</span>
